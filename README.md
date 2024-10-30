@@ -67,48 +67,40 @@ Detailed installation instructions are available in our Installation Documents.
 ![stateful](https://github.com/user-attachments/assets/d996efe0-eaa6-47a3-abc1-5d0532d8ba5d)
 
 
-### Kibana Availability Dashboard
+### Device Availability Dashboard
 ![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/acd83995-3038-403d-a029-65a2a181b251)
 
-### Kibana Discover Dashboard
+### Network Data Preview 
 ![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/ea14156e-0cef-4c37-888d-cb8c880d17f3)
 
-### Kibana Traffic Dashboard
-![Screenshot 2024-10-30 160201](https://github.com/user-attachments/assets/3e330636-29fa-4881-8c3e-9632394265f9)
-
-### Kibana Firwalls Dashboard
-![Screenshot 2024-10-30 160448](https://github.com/user-attachments/assets/3da47dca-cc9b-41e0-ac3f-69dcfc33c039)
 
 ### Kibana Query Consol 
 ![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
 
-### Alert Configuration
-![Alert Configuration](docs/images/kibana/alert-config.png)
-*Alert configuration interface*
-
-1. Set up email notification parameters
-2. Configure alert thresholds
-3. Customize alert priorities
-
 ## Monitoring Features
 
 ### Device Monitoring
-![Device Monitoring](docs/images/kibana/device-monitoring.png)
+![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/0ecc6cce-3ccf-4e0c-be7a-711edbb7a731)
+
 *Real-time device monitoring interface*
 
-- CPU utilization
+- Device Status
 - Memory usage
 - Interface statistics
 - Error rates
 
-### Network Analysis
-![Network Analysis](docs/images/kibana/network-analysis.png)
+### Network Traffic Analysis
+![Screenshot 2024-10-30 160201](https://github.com/user-attachments/assets/f7c8684a-fdc8-4c81-ae69-7db6b9d008d7)
+
 *Network traffic analysis and patterns*
 
 - Bandwidth utilization
 - Traffic patterns
 - Protocol analysis
 - Performance metrics
+
+### Network Firwalls Analysis
+![Screenshot 2024-10-30 160448](https://github.com/user-attachments/assets/045da6b9-0e07-4f85-a489-fd1e4ed7f59b)
 
 ## Alert Management
 ### Alert Configuration pipeline-config.yaml
