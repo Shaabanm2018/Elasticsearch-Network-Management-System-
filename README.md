@@ -2,57 +2,6 @@
 
 <div align="center">
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
-  <!-- Background -->
-  <rect width="500" height="200" fill="#ffffff"/>
-  
-  <!-- Network Icon -->
-  <g transform="translate(50, 40)">
-    <!-- Network Nodes -->
-    <circle cx="80" cy="60" r="15" fill="#2563eb"/>
-    <circle cx="160" cy="30" r="15" fill="#2563eb"/>
-    <circle cx="240" cy="90" r="15" fill="#2563eb"/>
-    <circle cx="200" cy="60" r="15" fill="#2563eb"/>
-    
-    <!-- Connection Lines -->
-    <line x1="95" y1="60" x2="145" y2="60" stroke="#64748b" stroke-width="3"/>
-    <line x1="160" y1="45" x2="160" y2="75" stroke="#64748b" stroke-width="3"/>
-    <line x1="175" y1="60" x2="225" y2="60" stroke="#64748b" stroke-width="3"/>
-    <line x1="215" y1="60" x2="235" y2="80" stroke="#64748b" stroke-width="3"/>
-    
-    <!-- Monitor Screen -->
-    <rect x="280" y="30" width="120" height="80" rx="5" fill="#1e40af"/>
-    <rect x="290" y="40" width="100" height="60" rx="2" fill="#60a5fa"/>
-    
-    <!-- Pulse Line on Screen -->
-    <path d="M295 70 L310 70 L320 50 L330 90 L340 60 L350 70 L375 70" 
-          stroke="#ffffff" 
-          stroke-width="3" 
-          fill="none"/>
-  </g>
-  
-  <!-- Text -->
-  <g transform="translate(50, 150)">
-    <text font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e40af">
-      Network Management System
-    </text>
-  </g>
-  
-  <!-- Small decorative elements -->
-  <g transform="translate(50, 40)">
-    <!-- Data dots -->
-    <circle cx="310" cy="45" r="2" fill="#ffffff"/>
-    <circle cx="350" cy="45" r="2" fill="#ffffff"/>
-    <circle cx="370" cy="45" r="2" fill="#ffffff"/>
-  </g>
-</svg>
-
-*Enterprise-grade network monitoring and management solution*
-
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/Docker-Ready-brightgreen.svg)](docs/installation.md)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-Enabled-brightgreen.svg)](docs/installation.md)
-</div>
 
 ## Table of Contents
 - [Overview](#overview)
@@ -67,9 +16,6 @@
 - [Alert Management](#alert-management)
 - [Maintenance](#maintenance)
 - [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support](#support)
 
 ## Overview
 An advanced network administration system designed for proactive monitoring and intelligent assessment of network infrastructure. The system provides real-time monitoring of routers, switches, and firewalls, with sophisticated incident response capabilities and predictive analytics.
@@ -81,11 +27,10 @@ An advanced network administration system designed for proactive monitoring and 
 - **Advanced Visualization**: Comprehensive dashboards for network metrics and performance
 - **Automated Response**: Streamlined incident management and response workflows
 
-![System Overview](docs/images/architecture/system-overview.png)
-*High-level system architecture and data flow*
 
 ## System Architecture
-![Architecture Diagram](docs/images/architecture/detailed-architecture.png)
+![Sysetem Flowchart](https://github.com/user-attachments/assets/7b927f12-b163-454e-963c-1c5c457d744c)
+
 
 ### Technology Stack
 - **Containerization**: Docker and Kubernetes
@@ -106,7 +51,7 @@ An advanced network administration system designed for proactive monitoring and 
 
 ## Installation
 
-### Quick Start
+### Automatic Full Installation
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/network-management-system
@@ -118,39 +63,13 @@ chmod +x es_installation.sh
 ```
 
 ### Step-by-Step Installation
-![Installation Steps](docs/images/installation/setup-steps.png)
-
-1. **Prepare the Environment**
-   ```bash
-   # Verify Kubernetes cluster
-   kubectl cluster-info
-   
-   # Create namespace
-   kubectl create namespace network-mgmt
-   ```
-
-2. **Deploy Core Components**
-   ```bash
-   # Deploy Elasticsearch
-   kubectl apply -f kubernetes/elasticsearch/
-   
-   # Deploy Kibana
-   kubectl apply -f kubernetes/kibana/
-   ```
-
-3. **Configure Monitoring Tools**
-   ```bash
-   # Deploy monitoring agents
-   kubectl apply -f kubernetes/monitoring/
-   ```
-
-Detailed installation instructions are available in our [Installation Guide](docs/installation.md).
+Detailed installation instructions are available in our Installation Documents.
 
 ## Dashboard Overview
 
 ### Main Dashboard
-![Main Dashboard](docs/images/kibana/main-dashboard.png)
-*Network overview dashboard showing key metrics and alerts*
+![Screenshot 2024-10-30 155654](https://github.com/user-attachments/assets/2139c865-638c-4b06-ad93-055f9e372901)
+*Network overview dashboard showing key deployments and stateful pods*
 
 #### Features
 1. Real-time device status
@@ -158,36 +77,27 @@ Detailed installation instructions are available in our [Installation Guide](doc
 3. Alert overview
 4. Resource utilization
 
-### Alert Dashboard
-![Alert Management](docs/images/kibana/alert-dashboard.png)
-*Alert management interface with priority-based incident tracking*
+### Deployements Dashboard
+![deployements](https://github.com/user-attachments/assets/c880c676-45ee-4bfc-ad4b-6fb2bea68a69)
 
-#### Components
-- Priority-based alert visualization
-- Incident response tracking
-- Historical trend analysis
+### Stateful Dashboard
+![stateful](https://github.com/user-attachments/assets/d996efe0-eaa6-47a3-abc1-5d0532d8ba5d)
 
-### Performance Metrics
-![Performance Dashboard](docs/images/kibana/performance-dashboard.png)
-*Detailed performance metrics and trending analysis*
 
-## Configuration
+### Kibana Availability Dashboard
+![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/acd83995-3038-403d-a029-65a2a181b251)
 
-### Network Device Setup
-1. Configure SNMP on target devices
-   ```bash
-   # Example SNMP configuration
-   snmpconf -i
-   ```
+### Kibana Discover Dashboard
+![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/ea14156e-0cef-4c37-888d-cb8c880d17f3)
 
-2. Update the device inventory file
-   ```yaml
-   devices:
-     - name: router-01
-       ip: 192.168.1.1
-       type: router
-       snmp_community: public
-   ```
+### Kibana Traffic Dashboard
+![Screenshot 2024-10-30 160201](https://github.com/user-attachments/assets/3e330636-29fa-4881-8c3e-9632394265f9)
+
+### Kibana Firwalls Dashboard
+![Screenshot 2024-10-30 160448](https://github.com/user-attachments/assets/3da47dca-cc9b-41e0-ac3f-69dcfc33c039)
+
+### Kibana Query Consol 
+![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
 
 ### Alert Configuration
 ![Alert Configuration](docs/images/kibana/alert-config.png)
@@ -218,58 +128,23 @@ Detailed installation instructions are available in our [Installation Guide](doc
 - Performance metrics
 
 ## Alert Management
-
-### Alert Dashboard
-![Alert Overview](docs/images/kibana/alert-overview.png)
-*Comprehensive alert management interface*
-
-Features:
-- Priority-based visualization
-- Real-time notifications
-- Incident tracking
-- Response management
-
-### Alert Configuration
+### Alert Configuration pipeline-config.yaml
 ```yaml
-alerts:
-  high_cpu:
-    threshold: 90
-    duration: 5m
-    severity: critical
-  high_memory:
-    threshold: 85
-    duration: 5m
-    severity: warning
+if [status_changed] == true {
+    email {
+          to => "junyian@orient-telecoms.com"
+          from => "logstash@your-company.com"
+          subject => "Interface Status Change Alert"
+          body => "Host IP: %{[host][ip]}, Interface: %{InterfaceNo}, Alias: %{ifAlias} changed status from %{previous_status} to %{ifDeviceStatus}"
+          address => "smtp.your-company.com"
+          port => 25
+          username => "elastic"  
+          password => "1Qgd0A1BkFxmVuqZ"  
+        }
+  }
 ```
 
-## Maintenance
-
-### Backup Procedures
-1. Regular backup of Elasticsearch indices
-   ```bash
-   # Create snapshot
-   curl -X PUT "localhost:9200/_snapshot/backup_repository"
-   ```
-
-2. Configuration backup
-3. System state snapshots
-
-### System Updates
-![Update Process](docs/images/maintenance/update-process.png)
-*System update workflow*
-
-1. Update component versions
-2. Apply security patches
-3. Refresh ML models
-
 ## Troubleshooting
-
-### Common Issues
-- [Network Connectivity Problems](docs/troubleshooting.md#network)
-- [Container Deployment Issues](docs/troubleshooting.md#containers)
-- [Alert System Errors](docs/troubleshooting.md#alerts)
-
-
-
+- Kindly Refer to our installation documentation
 
 ---
