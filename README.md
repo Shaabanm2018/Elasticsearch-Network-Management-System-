@@ -1,129 +1,219 @@
-# Network Management System
+# Troubleshooting Guide
 
-## Overview
-An advanced network administration system designed for proactive monitoring and intelligent assessment of network infrastructure. The system provides real-time monitoring of routers, switches, and firewalls, with sophisticated incident response capabilities and predictive analytics.
+This document provides solutions for common issues you might encounter while using the Network Management System.
 
-### Key Features
-- **Intelligent Monitoring**: Real-time surveillance of network devices and infrastructure
-- **ML-Powered Anomaly Detection**: Predictive analysis of potential failures and network anomalies
-- **Smart Alert System**: Priority-based incident categorization with automated notifications
-- **Advanced Visualization**: Comprehensive dashboards for network metrics and performance
-- **Automated Response**: Streamlined incident management and response workflows
+## Table of Contents
+- [Network Connectivity Issues](#network)
+- [Container Deployment Problems](#containers)
+- [Alert System Errors](#alerts)
+- [ELK Stack Issues](#elk-stack)
+- [Performance Problems](#performance)
 
-### Technology Stack
-- **Containerization**: Docker and Kubernetes
-- **Monitoring Stack**: ELK (Elasticsearch, Logstash, Kibana)
-- **Network Tools**: SNMP, Nmap
-- **Machine Learning**: Predictive maintenance models
-- **Notification System**: Automated email alerts
+<a name="network"></a>
+## Network Connectivity Issues
 
-## Prerequisites
-- Kubernetes cluster (v1.19+)
-- Docker (20.10+)
-- Sufficient cluster resources for ELK stack deployment
-- Network access to monitored devices
-- SMTP server for email notifications
+### SNMP Connection Failures
+**Symptoms:**
+- Devices not appearing in monitoring
+- Timeout errors in logs
+- Missing metrics
 
-## Installation
-
-### 1. Clone the Repository
+**Solutions:**
+1. Verify SNMP configuration:
 ```bash
-git clone https://github.com/yourusername/network-management-system
-cd network-management-system
+# Test SNMP connectivity
+snmpwalk -v2c -c public target_device
 ```
 
-### 2. Kubernetes and Docker Setup
-For detailed installation instructions, please refer to the [Installation Documents](./docs/installation.md).
+2. Check firewall rules:
+- Ensure UDP port 161 is open
+- Verify SNMP traffic is allowed
 
-### 3. Deploy the ELK Stack and Network Tools
+3. Validate device credentials:
+- Confirm community strings
+- Check SNMP version compatibility
 
-#### Option 1: Automated Installation
-Use the provided installation script:
+### Network Device Access Problems
+**Symptoms:**
+- Authentication failures
+- Connection timeouts
+- Incomplete device information
+
+**Solutions:**
+1. Check network connectivity:
 ```bash
-# Make the script executable
-chmod +x es_installation.sh
+# Test basic connectivity
+ping device_ip
 
-# Install all components
-./es_installation.sh <namespace> staging <node-name> all
-
-# Or install specific components
-./es_installation.sh <namespace> staging <node-name> elasticsearch kibana logstash snmp nmap
+# Check port availability
+nc -zv device_ip port
 ```
 
-#### Option 2: Manual Installation
-Follow the step-by-step guide in our [Installation Documents](./docs/installation.md).
+2. Verify device credentials:
+- Update credentials in configuration
+- Ensure proper access levels
+- Check for expired passwords
 
-### 4. Uninstallation
-To remove all components:
+<a name="containers"></a>
+## Container Deployment Problems
+
+### Pod Startup Failures
+**Symptoms:**
+- Pods stuck in pending state
+- CrashLoopBackOff errors
+- Container creation failures
+
+**Solutions:**
+1. Check pod status:
 ```bash
-./es_uninstallation.sh <namespace> staging <node-name> all
+kubectl get pods -n your-namespace
+kubectl describe pod pod-name -n your-namespace
 ```
 
-## Configuration
+2. Verify resource availability:
+```bash
+kubectl describe node node-name
+```
 
-### Network Device Setup
-1. Configure SNMP on target devices
-2. Update the device inventory file
-3. Verify network connectivity
+3. Common fixes:
+- Adjust resource limits
+- Check image pull policy
+- Verify container registry access
 
-### Alert Configuration
-1. Set up email notification parameters
-2. Configure alert thresholds
-3. Customize alert priorities and categories
+### Storage Issues
+**Symptoms:**
+- PersistentVolume binding failures
+- Storage class errors
+- Volume mount failures
 
-## Usage
+**Solutions:**
+1. Check PV/PVC status:
+```bash
+kubectl get pv,pvc -n your-namespace
+```
 
-### Accessing Dashboards
-- Kibana: `http://<your-kibana-host>:5601`
-- System Dashboard: `http://<your-system-dashboard>:8080`
+2. Verify storage class:
+```bash
+kubectl get storageclass
+```
 
-### Monitoring
-1. View real-time network metrics
-2. Check device status and performance
-3. Monitor alert notifications
-4. Analyze trending data
+<a name="alerts"></a>
+## Alert System Errors
 
-### Alert Management
-1. Review incoming alerts
-2. Investigate incidents
-3. Update alert status
-4. Generate reports
+### Missing Notifications
+**Symptoms:**
+- No email alerts received
+- Delayed notifications
+- Incomplete alert information
 
-## Maintenance
+**Solutions:**
+1. Check SMTP configuration:
+```bash
+# Test SMTP connection
+nc -zv smtp_server smtp_port
+```
 
-### Backup Procedures
-1. Regular backup of Elasticsearch indices
-2. Configuration backup
-3. System state snapshots
+2. Verify alert rules:
+- Check threshold configurations
+- Validate email templates
+- Ensure proper routing rules
 
-### System Updates
-1. Update component versions
-2. Apply security patches
-3. Refresh ML models
+### False Positives
+**Symptoms:**
+- Too many alerts
+- Incorrect severity levels
+- Unnecessary notifications
 
-## Troubleshooting
+**Solutions:**
+1. Adjust threshold values
+2. Update classification rules
+3. Fine-tune ML model parameters
 
-Common issues and their solutions:
-- [Network Connectivity Issues](./docs/troubleshooting.md#network)
-- [Container Deployment Problems](./docs/troubleshooting.md#containers)
-- [Alert System Errors](./docs/troubleshooting.md#alerts)
+<a name="elk-stack"></a>
+## ELK Stack Issues
 
-## Contributing
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+### Elasticsearch Problems
+**Symptoms:**
+- Cluster health issues
+- Index failures
+- Search performance problems
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**Solutions:**
+1. Check cluster health:
+```bash
+curl -X GET "localhost:9200/_cluster/health?pretty"
+```
 
-## Support
-For support and questions, please:
-- Create an issue in the GitHub repository
-- Contact the development team
-- Check our [FAQ](./docs/FAQ.md)
+2. Verify indices:
+```bash
+curl -X GET "localhost:9200/_cat/indices?v"
+```
 
-## Acknowledgments
-- ELK Stack documentation and community
-- Kubernetes documentation and community
-- Contributors and testers
+3. Common fixes:
+- Adjust JVM heap size
+- Optimize index settings
+- Check disk space
+
+### Kibana Visualization Issues
+**Symptoms:**
+- Dashboards not loading
+- Missing data
+- Visualization errors
+
+**Solutions:**
+1. Check Elasticsearch connection
+2. Verify index patterns
+3. Clear browser cache
+
+<a name="performance"></a>
+## Performance Problems
+
+### System Slowdown
+**Symptoms:**
+- Slow dashboard response
+- Delayed data processing
+- High resource usage
+
+**Solutions:**
+1. Check resource usage:
+```bash
+# Check CPU and memory usage
+kubectl top pods -n your-namespace
+```
+
+2. Monitor logs:
+```bash
+kubectl logs pod-name -n your-namespace
+```
+
+3. Optimization steps:
+- Scale resources
+- Optimize queries
+- Adjust retention policies
+
+### Data Collection Issues
+**Symptoms:**
+- Missing metrics
+- Data gaps
+- Inconsistent collection
+
+**Solutions:**
+1. Check Logstash configuration
+2. Verify data pipelines
+3. Monitor collection agents
+
+## Getting Additional Help
+
+If you continue to experience issues after trying these solutions:
+
+1. Check the [GitHub Issues](https://github.com/yourusername/network-management-system/issues) page
+2. Join our [Community Forum](link-to-forum)
+3. Contact support with:
+   - Detailed error description
+   - Relevant logs
+   - System configuration
+   - Steps to reproduce
 
 ---
-For more detailed information, please refer to our [Wiki](./wiki) or contact the development team.
+
+For urgent issues or security concerns, please contact the development team immediately.
