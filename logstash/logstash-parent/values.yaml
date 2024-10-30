@@ -1,0 +1,152 @@
+# Default values for logstash-parent.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+logstash:
+  image: "docker.elastic.co/logstash/logstash"
+  imageTag: "8.15.0"
+  plugins:
+    - logstash-input-snmp
+  extraVolumes:
+    - name: logstash-config
+      configMap:
+        name: logstash-config
+        items:
+          - key: logstash.yml
+            path: logstash.yml
+          - key: pipelines.yml
+            path: pipelines.yml
+
+    - name: pipelines
+      configMap:
+        name: pipeline-config
+
+    - name: ca-cert-volume
+      secret:
+        secretName: elasticsearch-master-certs
+
+    - name: logstash-config-volume
+      persistentVolumeClaim:
+        claimName: logstash-pvc
+
+  extraVolumeMounts:
+    - name: logstash-config
+      mountPath: /usr/share/logstash/config/logstash.yml
+      subPath: logstash.yml
+
+    - name: logstash-config
+      mountPath: /usr/share/logstash/config/pipelines.yml
+      subPath: pipelines.yml
+
+    - name: pipelines
+      mountPath: /usr/share/logstash/pipeline
+
+    - name: ca-cert-volume
+      mountPath: /usr/share/logstash/config/certs/ca.crt
+      subPath: ca.crt
+
+    - name: logstash-config-volume
+      #mountPath: /usr/share/logstash/new-pipeline
+      mountPath: /etc/pfelk
+      #subPath: .
+  service:
+    type: NodePort
+    ports:
+      - name: beats
+        port: 5044
+        protocol: TCP
+        targetPort: 5044
+      - name: monitoring
+        port: 9600
+        protocol: TCP
+        targetPort: 9600
+      - name: syslog
+        port: 5140
+        protocol: TCP
+        targetPort: 5140
+        nodePort: 30006 
+
+  headless:
+    annotations: {}
+    ports:
+      - name: beats
+        port: 5044
+        protocol: TCP
+        targetPort: 5044
+      - name: monitoring
+        port: 9600
+        protocol: TCP
+        targetPort: 9600
+      - name: syslog
+        port: 5140
+        protocol: TCP
+        targetPort: 5140
+  ports:
+    - name: beats
+      containerPort: 5044
+      protocol: TCP
+    - name: monitoring
+      containerPort: 9600
+      protocol: TCP
+    - name: syslog
+      containerPort: 5140
+      protocol: TCP
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+securityContext: {}
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+

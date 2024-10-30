@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"meta.helm.sh/release-name":"logstash","meta.helm.sh/release-namespace":"elasticsearch"},"creationTimestamp":"2024-09-02T03:10:47Z","labels":{"app":"logstash-logstash","app.kubernetes.io/managed-by":"Helm","chart":"logstash","heritage":"Helm","release":"logstash"},"name":"logstash-logstash-headless","namespace":"elasticsearch","resourceVersion":"1568656","uid":"1b08cd65-fe19-464a-ad9e-60d1808f1944"},"spec":{"clusterIP":"None","clusterIPs":["None"],"internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"beats","port":5044,"protocol":"TCP","targetPort":5044},{"name":"http","port":9600,"protocol":"TCP","targetPort":9600}],"selector":{"app":"logstash-logstash"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+    meta.helm.sh/release-name: logstash
+    meta.helm.sh/release-namespace: elasticsearch
+  creationTimestamp: "2024-09-02T03:10:47Z"
+  labels:
+    app: logstash-logstash
+    app.kubernetes.io/managed-by: Helm
+    chart: logstash
+    heritage: Helm
+    release: logstash
+  name: logstash-logstash-headless
+  namespace: elasticsearch
+  resourceVersion: "1573398"
+  uid: 1b08cd65-fe19-464a-ad9e-60d1808f1944
+spec:
+  clusterIP: None
+  clusterIPs:
+  - None
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: beats
+    port: 5044
+    protocol: TCP
+    targetPort: 5044
+  - name: http
+    port: 9600
+    protocol: TCP
+    targetPort: 9600
+  - name: syslog
+    port: 5140
+    protocol: TCP
+    targetPort: 5140
+
+  selector:
+    app: logstash-logstash
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
