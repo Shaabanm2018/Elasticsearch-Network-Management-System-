@@ -1,22 +1,5 @@
 # Elasticsearch Network Management System
 
-<div align="center">
-
-
-## Table of Contents
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [System Architecture](#system-architecture)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage Guide](#usage-guide)
-- [Dashboard Overview](#dashboard-overview)
-- [Monitoring Features](#monitoring-features)
-- [Alert Management](#alert-management)
-- [Maintenance](#maintenance)
-- [Troubleshooting](#troubleshooting)
-
 ## Overview
 An advanced network administration system designed for proactive monitoring and intelligent assessment of network infrastructure. The system provides real-time monitoring of routers, switches, and firewalls, with sophisticated incident response capabilities and predictive analytics.
 
