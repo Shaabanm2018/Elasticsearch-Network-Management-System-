@@ -1,0 +1,3 @@
+# Overview:
+
+This is a network administration system for proactive, real-time monitoring and intelligent assessment of routers, switches, and firewalls, with a focus on high-priority incident response. Designed a machine-learning-based anomaly detection model that predicts potential failures, prioritizes alerts by severity, and triggers automated email notifications for critical incidents to clients and administrators. Integrated with advanced network management tools, leveraging Docker, Kubernetes, and the ELK stack (Elasticsearch, Logstash, Kibana) for seamless data collection, processing, and visualization. This system has significantly enhanced incident response times and reduced network downtime through predictive maintenance and efficient alerting mechanisms.
