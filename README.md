@@ -72,7 +72,8 @@ Detailed installation instructions are available in our Installation Documents.
 
 
 ### Network Device Monitoring
-![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/0ecc6cce-3ccf-4e0c-be7a-711edbb7a731)
+![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/d17e5077-d87d-4d9a-81c3-ee0426a814c0)
+
 
 *Real-time device monitoring interface*
 
