@@ -1,8 +1,51 @@
-# Network Management System
+# Elasticsearch Network Management System
 
 <div align="center">
 
-![System Logo](docs/images/logo/system-logo.png)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+  <!-- Background -->
+  <rect width="500" height="200" fill="#ffffff"/>
+  
+  <!-- Network Icon -->
+  <g transform="translate(50, 40)">
+    <!-- Network Nodes -->
+    <circle cx="80" cy="60" r="15" fill="#2563eb"/>
+    <circle cx="160" cy="30" r="15" fill="#2563eb"/>
+    <circle cx="240" cy="90" r="15" fill="#2563eb"/>
+    <circle cx="200" cy="60" r="15" fill="#2563eb"/>
+    
+    <!-- Connection Lines -->
+    <line x1="95" y1="60" x2="145" y2="60" stroke="#64748b" stroke-width="3"/>
+    <line x1="160" y1="45" x2="160" y2="75" stroke="#64748b" stroke-width="3"/>
+    <line x1="175" y1="60" x2="225" y2="60" stroke="#64748b" stroke-width="3"/>
+    <line x1="215" y1="60" x2="235" y2="80" stroke="#64748b" stroke-width="3"/>
+    
+    <!-- Monitor Screen -->
+    <rect x="280" y="30" width="120" height="80" rx="5" fill="#1e40af"/>
+    <rect x="290" y="40" width="100" height="60" rx="2" fill="#60a5fa"/>
+    
+    <!-- Pulse Line on Screen -->
+    <path d="M295 70 L310 70 L320 50 L330 90 L340 60 L350 70 L375 70" 
+          stroke="#ffffff" 
+          stroke-width="3" 
+          fill="none"/>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(50, 150)">
+    <text font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e40af">
+      Network Management System
+    </text>
+  </g>
+  
+  <!-- Small decorative elements -->
+  <g transform="translate(50, 40)">
+    <!-- Data dots -->
+    <circle cx="310" cy="45" r="2" fill="#ffffff"/>
+    <circle cx="350" cy="45" r="2" fill="#ffffff"/>
+    <circle cx="370" cy="45" r="2" fill="#ffffff"/>
+  </g>
+</svg>
 
 *Enterprise-grade network monitoring and management solution*
 
@@ -226,54 +269,7 @@ alerts:
 - [Container Deployment Issues](docs/troubleshooting.md#containers)
 - [Alert System Errors](docs/troubleshooting.md#alerts)
 
-### Diagnostic Tools
-![Diagnostic Dashboard](docs/images/kibana/diagnostics.png)
-*System diagnostic interface*
 
-## Contributing
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
-- Code of conduct
-- Development process
-- Pull request procedure
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-For support and questions:
-- [Create an issue](https://github.com/yourusername/network-management-system/issues)
-- [Join our community](link-to-community)
-- [FAQ](docs/FAQ.md)
-
-### Community Resources
-- [Documentation Wiki](wiki)
-- [Community Forums](link-to-forums)
-- [Video Tutorials](link-to-tutorials)
 
 ---
-
-## Directory Structure
-```
-network-management-system/
-├── docs/
-│   ├── images/
-│   │   ├── kibana/
-│   │   ├── installation/
-│   │   ├── architecture/
-│   │   ├── maintenance/
-│   │   └── logo/
-│   ├── troubleshooting.md
-│   ├── installation.md
-│   └── FAQ.md
-├── kubernetes/
-│   ├── elasticsearch/
-│   ├── kibana/
-│   └── monitoring/
-├── scripts/
-│   ├── es_installation.sh
-│   └── es_uninstallation.sh
-├── README.md
-└── LICENSE
-```
-
-For more detailed information, please refer to our [Wiki](./wiki) or contact the development team.
