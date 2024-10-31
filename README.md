@@ -5,7 +5,6 @@ An advanced network administration system designed for proactive monitoring and 
 
 ### Key Features
 - **Intelligent Monitoring**: Real-time surveillance of network devices and infrastructure
-- **ML-Powered Anomaly Detection**: Predictive analysis of potential failures and network anomalies
 - **Smart Alert System**: Priority-based incident categorization with automated notifications
 - **Advanced Visualization**: Comprehensive dashboards for network metrics and performance
 - **Automated Response**: Streamlined incident management and response workflows
