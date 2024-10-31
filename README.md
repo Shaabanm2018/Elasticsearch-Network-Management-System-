@@ -101,6 +101,7 @@ This is a security monitoring dashboard for firewall operations and security pol
 The kibana query console is a query interface for deep diving into network data and logs. Perform complex searches, create custom visualizations, and analyze network data using Elasticsearch's powerful query language.
 
 ![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
+
 ## Alert Management
 ### Alert Configuration pipeline-config.yaml
 ```yaml
