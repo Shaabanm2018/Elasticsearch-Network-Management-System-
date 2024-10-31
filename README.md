@@ -51,7 +51,7 @@ Detailed installation instructions are available in our Installation Documents.
 ## Monitoring and Analysis Features
 
 ### Main Dashboard
-This dashboard serves as the primary entry point for network administrators and operators, offering immediate visibility into system health and performance metrics while enabling quick navigation to more detailed, specialized dashboards.
+The main dashboard serves as the primary entry point for elastic search system, offering immediate visibility into system health and performance metrics while enabling quick navigation to more details such as pod logs and specifications.
 ![Screenshot 2024-10-30 155654](https://github.com/user-attachments/assets/2139c865-638c-4b06-ad93-055f9e372901)
 *Network overview dashboard showing key deployments and stateful pods*
 
@@ -62,29 +62,25 @@ This dashboard serves as the primary entry point for network administrators and 
 4. Resource utilization
 
 ### Deployments Dashboard
-Provides a comprehensive view of all Kubernetes deployments within the network management system. Monitor the health, status, and performance metrics of deployed applications and services in real-time. Track deployment rollouts, updates, and resource utilization across your cluster.
+It provides a comprehensive view of all Kubernetes deployments within the system. Monitor the health, status, and performance metrics of Ingress and Kibana services in real-time. It also tracks deployment rollouts, updates, and resource utilization in the cluster.
 
 ![deployements](https://github.com/user-attachments/assets/c880c676-45ee-4bfc-ad4b-6fb2bea68a69)
 
 ### Stateful Dashboard
-Visualizes the status and metrics of StatefulSet workloads in your Kubernetes cluster. Monitor persistent volumes, replica status, and state management for applications requiring stable, unique network identifiers and persistent storage.
+This dashboard visualizes the status and metrics of elastic search and logstash statefulSet within the Kubernetes cluster. Monitor persistent volumes, replica status, and state management for applications requiring stable, unique network identifiers and persistent storage.
 
 ![stateful](https://github.com/user-attachments/assets/d996efe0-eaa6-47a3-abc1-5d0532d8ba5d)
 
 ### Network Data Preview 
-Offers a detailed overview of network telemetry data collected from various sources. View aggregated network statistics, trends, and real-time data streams from multiple network devices and endpoints in a unified interface.
+The Kibana discover panel offers a detailed overview of network telemetry data collected from various sources. View aggregated network statistics, trends, and real-time data streams from multiple network devices and endpoints in a unified interface.
 
 ![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/ea14156e-0cef-4c37-888d-cb8c880d17f3)
 
 ### Network Device Monitoring
-Provides real-time monitoring and diagnostics for network infrastructure devices. Track essential metrics and performance indicators for optimal network operation.
+Provides real-time monitoring and diagnostics for network infrastructure devices (Switches, Routeres and Firewalls). Track the Up-Down status the network devices.
 
 ![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/d17e5077-d87d-4d9a-81c3-ee0426a814c0)
 *Real-time device monitoring interface*
-- Device Status
-- Memory usage
-- Interface statistics
-- Error rates
 
 ### Network Traffic Analysis
 Advanced traffic analysis dashboard for deep insights into network behavior and performance patterns. Identify trends, anomalies, and potential bottlenecks in network traffic.
@@ -97,12 +93,12 @@ Advanced traffic analysis dashboard for deep insights into network behavior and 
 - Performance metrics
 
 ### Network Firewalls Analysis
-Comprehensive security monitoring dashboard for firewall operations and security policies. Track security events, policy violations, and traffic filtering across your network security infrastructure.
+This is a security monitoring dashboard for firewall operations and security policies. Track security events, policy violations, and traffic filtering across your network devices.
 
 ![Screenshot 2024-10-30 160448](https://github.com/user-attachments/assets/045da6b9-0e07-4f85-a489-fd1e4ed7f59b)
 
 ### Kibana Query Console
-Advanced query interface for deep diving into network data and logs. Perform complex searches, create custom visualizations, and analyze network data using Elasticsearch's powerful query language.
+The kibana query console is a query interface for deep diving into network data and logs. Perform complex searches, create custom visualizations, and analyze network data using Elasticsearch's powerful query language.
 
 ![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
 ## Alert Management
