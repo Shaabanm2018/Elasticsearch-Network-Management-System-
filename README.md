@@ -51,6 +51,7 @@ Detailed installation instructions are available in our Installation Documents.
 
 ### Main Dashboard
 The main dashboard serves as the primary entry point for elastic search system, offering immediate visibility into system health and performance metrics while enabling quick navigation to more details such as pod logs and specifications.
+
 ![Screenshot 2024-10-30 155654](https://github.com/user-attachments/assets/2139c865-638c-4b06-ad93-055f9e372901)
 *Network overview dashboard showing key deployments and stateful pods*
 
