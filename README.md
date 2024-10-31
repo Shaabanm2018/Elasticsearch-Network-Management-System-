@@ -60,44 +60,50 @@ Detailed installation instructions are available in our Installation Documents.
 3. Alert overview
 4. Resource utilization
 
-### Deployements Dashboard
+### Deployments Dashboard
+Provides a comprehensive view of all Kubernetes deployments within the network management system. Monitor the health, status, and performance metrics of deployed applications and services in real-time. Track deployment rollouts, updates, and resource utilization across your cluster.
+
 ![deployements](https://github.com/user-attachments/assets/c880c676-45ee-4bfc-ad4b-6fb2bea68a69)
 
 ### Stateful Dashboard
+Visualizes the status and metrics of StatefulSet workloads in your Kubernetes cluster. Monitor persistent volumes, replica status, and state management for applications requiring stable, unique network identifiers and persistent storage.
+
 ![stateful](https://github.com/user-attachments/assets/d996efe0-eaa6-47a3-abc1-5d0532d8ba5d)
 
-
 ### Network Data Preview 
+Offers a detailed overview of network telemetry data collected from various sources. View aggregated network statistics, trends, and real-time data streams from multiple network devices and endpoints in a unified interface.
+
 ![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/ea14156e-0cef-4c37-888d-cb8c880d17f3)
 
-
 ### Network Device Monitoring
+Provides real-time monitoring and diagnostics for network infrastructure devices. Track essential metrics and performance indicators for optimal network operation.
+
 ![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/d17e5077-d87d-4d9a-81c3-ee0426a814c0)
-
-
 *Real-time device monitoring interface*
-
 - Device Status
 - Memory usage
 - Interface statistics
 - Error rates
 
 ### Network Traffic Analysis
+Advanced traffic analysis dashboard for deep insights into network behavior and performance patterns. Identify trends, anomalies, and potential bottlenecks in network traffic.
+
 ![Screenshot 2024-10-30 160201](https://github.com/user-attachments/assets/f7c8684a-fdc8-4c81-ae69-7db6b9d008d7)
-
 *Network traffic analysis and patterns*
-
 - Bandwidth utilization
 - Traffic patterns
 - Protocol analysis
 - Performance metrics
 
 ### Network Firewalls Analysis
+Comprehensive security monitoring dashboard for firewall operations and security policies. Track security events, policy violations, and traffic filtering across your network security infrastructure.
+
 ![Screenshot 2024-10-30 160448](https://github.com/user-attachments/assets/045da6b9-0e07-4f85-a489-fd1e4ed7f59b)
 
-### Kibana Query Consol 
-![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
+### Kibana Query Console
+Advanced query interface for deep diving into network data and logs. Perform complex searches, create custom visualizations, and analyze network data using Elasticsearch's powerful query language.
 
+![Screenshot 2024-10-30 160841](https://github.com/user-attachments/assets/382b0240-51fc-454b-9695-eb0d0ef9ad76)
 ## Alert Management
 ### Alert Configuration pipeline-config.yaml
 ```yaml
