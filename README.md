@@ -61,7 +61,7 @@ The main dashboard serves as the primary entry point for elastic search system, 
 4. Resource utilization
 
 ### Deployments Dashboard
-It provides a comprehensive view of all Kubernetes deployments within the system. Monitor the health, status, and performance metrics of Ingress and Kibana services in real-time. It also tracks deployment rollouts, updates, and resource utilization in the cluster.
+This dashboard provides a comprehensive view of all Kubernetes deployments within the system. Monitor the health, status, and performance metrics of Ingress and Kibana services in real-time. It also tracks deployment rollouts, updates, and resource utilization in the cluster.
 
 ![deployements](https://github.com/user-attachments/assets/c880c676-45ee-4bfc-ad4b-6fb2bea68a69)
 
@@ -76,13 +76,13 @@ The Kibana discover panel offers a detailed overview of network telemetry data c
 ![Screenshot 2024-10-30 160108](https://github.com/user-attachments/assets/ea14156e-0cef-4c37-888d-cb8c880d17f3)
 
 ### Network Device Monitoring
-Provides real-time monitoring and diagnostics for network infrastructure devices (Switches, Routeres and Firewalls). Track the Up-Down status the network devices.
+This dashboard Provides real-time monitoring and diagnostics for network infrastructure devices (Switches, Routeres and Firewalls). Track the Up-Down status the network devices.
 
 ![Screenshot 2024-10-30 160251](https://github.com/user-attachments/assets/d17e5077-d87d-4d9a-81c3-ee0426a814c0)
 *Real-time device monitoring interface*
 
 ### Network Traffic Analysis
-Advanced traffic analysis dashboard for deep insights into network behavior and performance patterns. Identify trends, anomalies, and potential bottlenecks in network traffic.
+This is a traffic analysis dashboard for deep insights into network behavior and performance patterns. Identify trends, anomalies, and potential bottlenecks in network traffic.
 
 ![Screenshot 2024-10-30 160201](https://github.com/user-attachments/assets/f7c8684a-fdc8-4c81-ae69-7db6b9d008d7)
 *Network traffic analysis and patterns*
