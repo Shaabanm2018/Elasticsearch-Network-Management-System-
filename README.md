@@ -61,11 +61,6 @@ The main dashboard serves as the primary entry point for elastic search system, 
 3. Alert overview
 4. Resource utilization
 
-### Deployments Dashboard
-This dashboard provides a comprehensive view of all Kubernetes deployments within the system. Monitor the health, status, and performance metrics of Ingress and Kibana services in real-time. It also tracks deployment rollouts, updates, and resource utilization in the cluster.
-
-![deployements](https://github.com/user-attachments/assets/c880c676-45ee-4bfc-ad4b-6fb2bea68a69)
-
 ### Stateful Dashboard
 This dashboard visualizes the status and metrics of elastic search and logstash statefulSet within the Kubernetes cluster. Monitor persistent volumes, replica status, and state management for applications requiring stable, unique network identifiers and persistent storage.
 
